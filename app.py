@@ -5,29 +5,7 @@ import datetime
 from util import filter as filter_data
 from util import convert
 
-# 1. Konfigurasi Halaman (Menggunakan Layout Wide agar dashboard lebih luas)
 st.set_page_config(page_title="Smart Budget Tracker", layout="wide", page_icon="💰")
-
-# Sembunyikan semua elemen bawaan Streamlit (Header, Footer, Menu, Toolbar)
-hide_streamlit_style = """
-            <style>
-            div[data-testid="stStatusWidget"], .stAppDeployButton, footer, header {
-                visibility: hidden !important;
-                display: none !important;
-            }
-            
-            
-            #MainMenu, [data-testid="stActionButton"] {
-                visibility: hidden !important;
-                display: none !important;
-            }
-            
-            .stApp {
-                margin-top: -40px;
-            }
-            </style>
-            """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 def local_css(file_name):
     try:
@@ -39,12 +17,12 @@ def local_css(file_name):
 local_css("style.css")
 
 # 2. Header Dashboard
-st.title("💰 SMART BUDGET TRACKER")
-st.caption("Pantau keuanganmu secara cerdas, real-time, dan anti BONCOS!")
+st.title("MANTAUDUIT.ID")
+st.caption("Pantau keuanganmu biar ga **BONCOS**")
 st.divider()
 
 # 3. Sidebar (Pengaturan & Filter Terpusat)
-st.sidebar.header("⚙️ Kontrol Panel")
+st.sidebar.header("Sidebar")
 limit_harian = st.sidebar.number_input("Set Limit Harian (Rp)", value=500000, step=50000)
 
 # Ambil Data dari Database
