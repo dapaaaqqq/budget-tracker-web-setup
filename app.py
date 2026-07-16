@@ -8,6 +8,14 @@ from util import convert
 # 1. Konfigurasi Halaman (Menggunakan Layout Wide agar dashboard lebih luas)
 st.set_page_config(page_title="Smart Budget Tracker", layout="wide", page_icon="💰")
 
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 def local_css(file_name):
     try:
         with open(file_name) as f:
